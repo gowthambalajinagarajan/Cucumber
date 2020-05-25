@@ -3,7 +3,6 @@ package Steps;
 import java.io.IOException;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
 import Page.DressPage;
 import Page.HomePage;
@@ -34,7 +33,7 @@ public class DressPageTest {
 	public void tearDown(Scenario sc) throws IOException {
 		if(sc.isFailed()) {
 			String Name=sc.getName();
-			dp.getSnapShot(Name,"C:\\Users\\NIHITH\\Desktop\\Java\\SnapShot");
+			dp.getSnapShot("target","Failed");
 			}
 	}
 	
@@ -60,8 +59,8 @@ public class DressPageTest {
 
 	@Then("^the product should added to cart page$")
 	public void the_product_should_added_to_cart_page() throws Throwable {
-	    dp.verifyCheckoutButton();
-	    dp.getCloseBtn().click();
-	    dp.ClickCart();
+	   dp.verifyCheckoutButton();
+	   dp.getCloseBtn().click();
+	   dp.ClickCart();
 	}
 }

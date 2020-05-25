@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
 		return txtUserName;
 	}
 	
-	public WebElement getTxtPassword() {
+	public WebElement getPassword() {
 		return txtPassword;
 	}
 	

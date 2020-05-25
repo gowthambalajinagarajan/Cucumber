@@ -44,8 +44,8 @@ public class BasePage {
 			}
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.get("https://adactin.com/HotelApp/");
-		  //driver.get("http://automationpractice.com/index.php");
+			//driver.get("https://adactin.com/HotelApp/");
+			driver.get("http://automationpractice.com/index.php");
 		}
 	}
 

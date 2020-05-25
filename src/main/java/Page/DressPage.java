@@ -62,9 +62,20 @@ public class DressPage extends BasePage{
 	}
 	
 	public void ClickCart() {
-		Cart.click();
+		 Cart.click();
 	}
-	
+	public void ClickAddtoCart(String Prod) {
+		List<WebElement> products=lstProducts;
+			for(WebElement prod:products) {
+			String Name=prod.findElement(By.xpath(".//a[@class='product-name']")).getText();
+				System.out.println(Name);
+				if(Name.equals(Prod)) {
+					mouseOver(prod);
+					prod.findElement(By.xpath(".//a[@title='Add to cart']")).click();
+				}
+		}
+		
+		
 	/*public void ClickAddtoCart(String Prod) {
 		List<WebElement> products=lstProducts;
 		for(WebElement prod:products) {
@@ -74,18 +85,6 @@ public class DressPage extends BasePage{
 				mouseOver(prod);
 				prod.findElement(By.xpath(".//a[@title='Add to cart']")).click();
 			}
-		}
-		*/
-		
-	public void ClickAddtoCart(String Prod) {
-		List<WebElement> products=lstProducts;
-		for(WebElement prod:products) {
-			String Name=prod.findElement(By.xpath(".//a[@class='product-name']")).getText();
-			System.out.println(Name);
-			if(Name.equals(Prod)) {
-				mouseOver(prod);
-				prod.findElement(By.xpath(".//a[@title='Add to cart']")).click();
-			}
-		}
+		}*/
 	}
-	}
+}

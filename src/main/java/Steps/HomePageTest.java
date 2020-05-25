@@ -33,7 +33,7 @@ public class HomePageTest {
 
 	@Then("^User should see subscription Message$")
 	public void user_should_see_subscription_Message() throws Throwable {
-	    Assert.assertTrue("Failed:Subscribe Unsuccessfully", hp.getMessage().contains("successfully "));
+	    Assert.assertTrue("Failed", hp.getMessage().contains("successfully"));
 	}
 
 	@When("^User Click on the tab \"(.*?)\"$")

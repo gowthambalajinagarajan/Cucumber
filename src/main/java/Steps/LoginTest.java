@@ -23,27 +23,32 @@ public class LoginTest {
 	   lp=new LoginPage();
 	}
 
-	@When("^User enter the value username and password$")
+	/*@When("^User enter the value username and password$")
 	public void user_enter_the_value_username_and_password() throws Throwable {
-	 lp.getUserName().sendKeys("gowthambala");
-	 lp.getTxtPassword().sendKeys("balaji18");
+	
+	}*/
+	
+	@When("^User enter the value \"(.*?)\" and \"(.*?)\" in Login Page$")
+	public void user_enter_the_value_and_in_Login_Page(String arg1, String arg2) throws Throwable {
+	  lp.getUserName().sendKeys(arg1);
+	  lp.getPassword().sendKeys(arg2);
 	}
 
-	@When("^User click on the login button$")
+	@And("^User click on the login button$")
 	public void user_click_on_the_login_button() throws Throwable {
 	    lp.ClickLogin();
 	}
 
 	@Then("^User should logged into the application$")
 	public void user_should_logged_into_the_application() throws Throwable {
-	    Assert.assertTrue("Failed:Login failed",lp.getURL().contains("HotelApp"));
+	    Assert.assertTrue("Failed",lp.getURL().contains("SearchHotel"));
 	}
 	
-	@When("^User enter the value username and password in Login Page$")
+	/*@When("^User enter the value username and password in Login Page$")
 	public void user_enter_the_value_username_and_password_in_Login_Page(DataTable table) throws Throwable {
-		List<List<String>> datas=table.raw();
-		for(int i=0;i<datas.size();i++) {
-			lp.LoginApplication(datas.get(i).get(0), datas.get(i).get(1));
-		}
-	}
+		List<List<String>> data=table.raw();
+			for(int i=0;i<data.size();i++) {
+				lp.LoginApplication(data.get(i).get(0), data.get(i).get(1));
+			}
+	}*/
 }
