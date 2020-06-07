@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -116,13 +114,13 @@ public class BasePage {
 		FileHandler.copy(f1,f2);
 	}
 	
-	public String getExcelData(String FileLocation,String SheetName,int row,int col) throws IOException {
+	/*public String getExcelData(String FileLocation,String SheetName,int row,int col) throws IOException {
 		File f=new File(FileLocation);
 		FileInputStream fis=new FileInputStream(f);
 		Workbook wb=new XSSFWorkbook(fis);
 		Sheet sh=wb.getSheet(SheetName);
 		return sh.getRow(row).getCell(col).getStringCellValue();
-	}
+	}*/
 	
 	public void SwitchWindow(int index) {
 		Set<String> windows=driver.getWindowHandles();
@@ -135,4 +133,11 @@ public class BasePage {
 		String path="//table//tbody//tr['"+row+"']//td['"+col+"']";
 		return table.findElement(By.xpath(path)).getText();
 	}
+
+	public static String getConfigPath() {
+		File obj=new File("src/test/resources/extent.xml");
+		return obj.getAbsolutePath();
+	}
+
+	
 }

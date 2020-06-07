@@ -1,13 +1,11 @@
-Feature: Login Validation
+Feature: LogIn Action Test
 
 Scenario Outline: Successful Login with Valid Credentials
-
-Given User has to launch the Application
-When User enter the value "<username>" and "<password>" in Login Page
-
-And User click on the login button
-Then User should logged into the application
+Given User is on home page
+When User enters "<userName>","<password>" and click the login  button
+Then User should able to login successfully
 
 Examples:
-|username|password|
+|userName|password|
 |gowthambala|balaji18|
+|Test|test123|

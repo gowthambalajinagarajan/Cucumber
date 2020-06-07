@@ -10,8 +10,8 @@ Then User should see the same number of products count matching with the product
 
 Examples:
 |tab|
-|DRESSES|
 |WOMEN|
+|DRESSES|
 |TSHIRTS|
 
 @Regression
@@ -26,4 +26,6 @@ Examples:
 |tab|products|
 |DRESSES|Printed Chiffon Dress|
 |DRESSES|Printed Summer Dress|
+|WOMEN|Blouse|
+|TSHIRTS|Faded Short Sleeve T-shirts|
  

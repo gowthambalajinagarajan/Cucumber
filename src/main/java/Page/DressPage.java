@@ -64,12 +64,12 @@ public class DressPage extends BasePage{
 	public void ClickCart() {
 		 Cart.click();
 	}
-	public void ClickAddtoCart(String Prod) {
+	public void ClickAddtoCart(String input) {
 		List<WebElement> products=lstProducts;
 			for(WebElement prod:products) {
 			String Name=prod.findElement(By.xpath(".//a[@class='product-name']")).getText();
 				System.out.println(Name);
-				if(Name.equals(Prod)) {
+				if(Name.equals(input)) {
 					mouseOver(prod);
 					prod.findElement(By.xpath(".//a[@title='Add to cart']")).click();
 				}
